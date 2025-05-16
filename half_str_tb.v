@@ -10,8 +10,8 @@ half_str_tb uut(
 
     .a(a),
     .b(b),
-    .s(s),
-    .c(c)
+    .sum(sum),
+    .carry(carry)
 );
 
 
