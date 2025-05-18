@@ -21,4 +21,4 @@ module decoder_3to8_str(
     and g7(d[6] , a[2] , a[1] , a0_not );
     and g8(d[7] , a[2] , a[1] , a[0] );
 
-endmodule
+endmodulee
