@@ -1,6 +1,0 @@
-module latch(
-
-    input D,
-    input enable,
-    output 
-);
