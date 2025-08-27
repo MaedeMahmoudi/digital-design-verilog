@@ -1,0 +1,31 @@
+
+module tb_sync_reset_register;
+    reg clk, rst;
+    reg [7:0]d;
+    wire [7:0]q;
+
+    sync_reset_register DUT(.*);
+
+    always #5 clk = ~clk;
+
+    initial begin
+       clk = 0 ; rst = 1 ; d = 8'h00;
+       #10 rst = 0;
+
+       d = 8'hAA;
+       #10;
+       d = 8'h55;
+       #10;
+       d = 8'hFF;
+       #10;
+
+       rst = 1;
+       #10;
+       rst = 0;
+       d = 8'h33;
+       #10;
+
+       #20 $finish;
+    end
+
+endmodule 
