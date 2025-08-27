@@ -1,14 +1,16 @@
-
-module DownCounter(
+module down_counter (
     input wire clk,
-    input wire rst,
+    input wire reset,
     input wire enable,
-    input wire load,
-    input wire [3:0] data_in,
-    output reg [3:0] count,
-    output reg underflow
+    output reg [3:0] count
 );
 
-always @(posedge clk or posedge rst)begin
-    if(rst)begin
-        count <= 
+always @(posedge clk or posedge reset) begin
+    if (reset) begin
+        count <= 4'b1111; // مقدار اولیه
+    end else if (enable) begin
+        count <= count - 1; // کاهش مقدار
+    end
+end
+
+endmodule
